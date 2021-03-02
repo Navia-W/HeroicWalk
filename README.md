@@ -76,14 +76,26 @@ That should be all.
 
 ### Developers
 
-Ruben Steenbrink
-Noah Eelman
-Jarno van Lierop
-Duncan (Athena) Westerdijk
+<p align="left">
+    Ruben Steenbrink
+    </br>
+    Noah Eelman
+    </br>
+    Jarno van Lierop
+    </br>
+    Duncan (Athena) Westerdijk
+ </p>
+  
+
 
 ### Artists
 
-Luna Corbee
-Roos ten Hoedt
-Fleur Schurink
-Rosalie Kuut
+<p align="left">
+     Luna Corbee
+     </br>
+     Roos ten Hoedt
+     </br>
+     Fleur Schurink
+     </br>
+     Rosalie Kuut
+</p>
