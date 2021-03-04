@@ -7,6 +7,7 @@ public class TargetBehavior : MonoBehaviour
     public void GotHit()
     {
         //Set Score.
+        MiniGameManager.miniGameManager.OnComplete();
         Destroy(this.gameObject);
     }
 }

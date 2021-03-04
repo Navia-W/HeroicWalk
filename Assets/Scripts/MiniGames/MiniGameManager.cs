@@ -8,6 +8,9 @@ public class MiniGameManager : MonoBehaviour
 
     [SerializeField]
     private List<GameObject> _miniGames;
+    [SerializeField]
+    private List<int> _scores;
+    private int _rOutcome;
     private GameObject _activeMiniGame;
 
     private void Awake()
@@ -17,7 +20,7 @@ public class MiniGameManager : MonoBehaviour
 
     private void SelectMiniGame()
     {
-        _activeMiniGame = Instantiate(_miniGames[Random.Range(0, _miniGames.Count)]);
+        _activeMiniGame = Instantiate(_miniGames[_rOutcome = Random.Range(0, _miniGames.Count)]);
     }
 
     
