@@ -13,6 +13,10 @@ public static class StaticManager
     public static int exampleInt2;
     public static int exampleInt3;
 
+    //Current active item
     public static int currentShirt;
     public static int currentHat;
+
+    //Item store
+    public static int hat1;
 }
