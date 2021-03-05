@@ -12,4 +12,7 @@ public static class StaticManager
     public static int exampleInt;
     public static int exampleInt2;
     public static int exampleInt3;
+
+    public static int currentShirt;
+    public static int currentHat;
 }
