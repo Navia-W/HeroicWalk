@@ -7,6 +7,16 @@ public class LoadData : MonoBehaviour
 {
     Type staticManager = typeof(StaticManager);
 
+    public static LoadData loadData;
+
+    private void Awake()
+    {
+        if (loadData != null)
+            return;
+
+        loadData = this;
+    }
+
     public void GetVariables()
     {
         FieldInfo[] staticFields = staticManager.GetFields();

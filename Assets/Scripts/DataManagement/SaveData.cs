@@ -9,7 +9,17 @@ using UnityEngine;
 public class SaveData : MonoBehaviour
 {
     Type staticManager = typeof(StaticManager);
-    
+
+    public static SaveData saveData;
+
+    private void Awake()
+    {
+        if (saveData != null)
+            return;
+
+        saveData = this;
+    }
+
     public void GetVariables()
     {
         FieldInfo[] staticFields = staticManager.GetFields();
