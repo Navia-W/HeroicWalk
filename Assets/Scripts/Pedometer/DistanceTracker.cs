@@ -10,7 +10,7 @@ public class DistanceTracker : MonoBehaviour
 {
     public Text DistanceText;
     public Text TargetText;
-    public int TargetDistance;
+    public float TargetDistance;
 
     float currentDistance;
     bool MiniGameActive;
@@ -18,26 +18,29 @@ public class DistanceTracker : MonoBehaviour
     private void Start()
     {
         //in meters
-        TargetDistance = 150;
+        TargetDistance = 150f;
         MiniGameActive = false;
     }
 
     private void Update()
     {
-        GetDistance();
+        if (MiniGameActive == false)
+        {
+            TargetText.text = "Doel: " + TargetDistance.ToString() + "m";
+            GetDistance();
+        }
     }
 
+    //Sets the walked distance as distance and calls the functions that tracks if the target amount of distance has been obtained
     void GetDistance()
     {
         float distance = float.Parse(DistanceText.text);
         currentDistance = distance * 3.2808f;
-        if (MiniGameActive == false)
-        {
-            DistanceChallenge(currentDistance, TargetDistance);
-        }
+        DistanceChallenge(currentDistance, TargetDistance);
     }
 
-    void DistanceChallenge(float currentDistance, int targetDistance)
+    //Checks if the set target distance has been obtained
+    void DistanceChallenge(float currentDistance, float targetDistance)
     {
         if (currentDistance > targetDistance)
         {
@@ -47,8 +50,9 @@ public class DistanceTracker : MonoBehaviour
         }
     }
 
+    //Increases the target distance
     void IncreaseDistance()
     {
-        TargetDistance *= 2;
+        TargetDistance *= 1.1f;
     }
 }
