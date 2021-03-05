@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class AvatarManager : MonoBehaviour
@@ -81,6 +80,11 @@ public class AvatarManager : MonoBehaviour
             _currentHat += next;
             _hat = _hats[_currentHat];
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveAvatar();
     }
 
     /// <summary>
