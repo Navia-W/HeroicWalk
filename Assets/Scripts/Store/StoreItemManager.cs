@@ -14,6 +14,6 @@ public class StoreItemManager : MonoBehaviour
         if (storeItemManager = null)
             storeItemManager = this;
 
-        itemList.Add(new StoreItemAttributes(StoreItemAttributes.ItemType.hat, 500, "hat1", StaticManager.hat1 == 0 ? true : false));
+        itemList.Add(new StoreItemAttributes(StoreItemAttributes.ItemType.hat, 0, "hat1", StaticManager.hat1 == 0 ? true : false));
     }
 }

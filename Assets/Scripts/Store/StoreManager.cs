@@ -13,7 +13,7 @@ public class StoreManager : MonoBehaviour
     [SerializeField]
     private List<StoreItemAttributes> _itemList = new List<StoreItemAttributes>();
 
-    private StoreItemAttributes _item;
+    private StoreItemAttributes _item; // Is getting used, do not delete.
 
     private void Awake()
     {
@@ -57,25 +57,22 @@ public class StoreManager : MonoBehaviour
     }
 
     private int _playerScore;
+    private int _lockedBool;
 
-    public void BuyItem(/*int itemIndex*/)
+    public void BuyItem()
     {
-        /*if (_playerScore >= _itemList[itemIndex].itemPrice && _itemList[itemIndex].isLocked)
-        {
-            _playerScore -= _itemList[itemIndex].itemPrice;
-            _itemList[itemIndex].isLocked = false;
-        }*/
-
-        Debug.Log(_itemList[_currentItem]);
-        if(_playerScore >= _itemList[_currentItem].itemPrice && _itemList[_currentItem].isLocked)
+        if (_playerScore >= _itemList[_currentItem].itemPrice && _itemList[_currentItem].isLocked == true)
         {
             _playerScore -= _itemList[_currentItem].itemPrice;
             _itemList[_currentItem].isLocked = false;
+            _lockedBool = 1;
+
+            _lockedItems.RemoveAt(_currentItem);
+            _unlockedItems.Add(_itemList[_currentItem]);
         }
 
         SaveInventory(_itemList[_currentItem].itemName);
     }
-
 
     Type staticManager = typeof(StaticManager);
 
@@ -87,7 +84,7 @@ public class StoreManager : MonoBehaviour
         {
             if (staticFields[i].Name.Contains(itemName))
             {
-                staticFields[i].SetValue(staticFields[i].Name, true);
+                staticFields[i].SetValue(staticFields[i].Name, _lockedBool);
 
                 SaveData.saveData.GetVariables();
             }
