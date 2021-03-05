@@ -904,6 +904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817c822765989cf469f9a1a5212a673e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stepCounter: {fileID: 916530772}
   starObj: {fileID: 1280312478}
   counter: {fileID: 1530550126}
 --- !u!1 &833716120
@@ -1092,6 +1093,7 @@ MonoBehaviour:
   DistanceText: {fileID: 246832204}
   TargetText: {fileID: 563842292}
   TargetDistance: 150
+  MiniGameActive: 0
 --- !u!1 &942427716
 GameObject:
   m_ObjectHideFlags: 0

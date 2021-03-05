@@ -17,7 +17,7 @@ public class DistanceTracker : MonoBehaviour
     public float TargetDistance;
 
     float currentDistance;
-    bool MiniGameActive;
+    public bool MiniGameActive;
 
     private void Start()
     {
@@ -58,6 +58,6 @@ public class DistanceTracker : MonoBehaviour
     //Increases the target distance
     void IncreaseDistance()
     {
-        TargetDistance *= 1.1f;
+        TargetDistance += 50;
     }
 }

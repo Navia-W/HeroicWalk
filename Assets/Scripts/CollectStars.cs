@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class CollectStars : MonoBehaviour
 {
+    public GameObject stepCounter;
+    DistanceTracker distanceTracker;
     public Button starObj;
     public Text counter;
     bool spawned = false;
@@ -13,8 +15,8 @@ public class CollectStars : MonoBehaviour
     private void Start()
     {
         starObj.gameObject.SetActive(false);
+        distanceTracker = stepCounter.GetComponent<DistanceTracker>();
         starAmount = 0;
-        SpawnStar();
     }
 
     private void Update()
@@ -37,6 +39,7 @@ public class CollectStars : MonoBehaviour
     {
         if (spawned == true)
         {
+            distanceTracker.MiniGameActive = false;
             starAmount++;
             starObj.gameObject.SetActive(false);
             spawned = false;
