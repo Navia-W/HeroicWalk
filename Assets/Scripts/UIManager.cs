@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("quit");
+        Debug.Log("Quit");
     }
 
     // Update is called once per frame
