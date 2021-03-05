@@ -8,6 +8,10 @@ using UnityEngine.UI;
 /// </summary>
 public class DistanceTracker : MonoBehaviour
 {
+    public GameObject sceneManager;
+
+    CollectStars collectStars;
+
     public Text DistanceText;
     public Text TargetText;
     public float TargetDistance;
@@ -17,7 +21,7 @@ public class DistanceTracker : MonoBehaviour
 
     private void Start()
     {
-        //in meters
+        collectStars = sceneManager.GetComponent<CollectStars>();
         TargetDistance = 150f;
         MiniGameActive = false;
     }
@@ -42,9 +46,10 @@ public class DistanceTracker : MonoBehaviour
     //Checks if the set target distance has been obtained
     void DistanceChallenge(float currentDistance, float targetDistance)
     {
-        if (currentDistance > targetDistance)
+        if (currentDistance >= targetDistance)
         {
             //call challenge
+            collectStars.SpawnStar();
             MiniGameActive = true;
             IncreaseDistance();
         }
