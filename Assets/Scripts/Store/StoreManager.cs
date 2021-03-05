@@ -6,8 +6,11 @@ using UnityEngine;
 
 public class StoreManager : MonoBehaviour
 {
+    [SerializeField]
     private List<StoreItemAttributes> _lockedItems = new List<StoreItemAttributes>();
+    [SerializeField]
     private List<StoreItemAttributes> _unlockedItems = new List<StoreItemAttributes>();
+    [SerializeField]
     private List<StoreItemAttributes> _itemList = new List<StoreItemAttributes>();
 
     private StoreItemAttributes _item;
@@ -31,6 +34,7 @@ public class StoreManager : MonoBehaviour
         }
     }
 
+    [SerializeField]
     private int _currentItem = 0;
 
     public void SelectItem(int next)
@@ -54,15 +58,22 @@ public class StoreManager : MonoBehaviour
 
     private int _playerScore;
 
-    public void BuyItem(int itemIndex)
+    public void BuyItem(/*int itemIndex*/)
     {
-        if (_playerScore >= _itemList[itemIndex].itemPrice && _itemList[itemIndex].isLocked)
+        /*if (_playerScore >= _itemList[itemIndex].itemPrice && _itemList[itemIndex].isLocked)
         {
             _playerScore -= _itemList[itemIndex].itemPrice;
             _itemList[itemIndex].isLocked = false;
+        }*/
+
+        Debug.Log(_itemList[_currentItem]);
+        if(_playerScore >= _itemList[_currentItem].itemPrice && _itemList[_currentItem].isLocked)
+        {
+            _playerScore -= _itemList[_currentItem].itemPrice;
+            _itemList[_currentItem].isLocked = false;
         }
 
-        SaveInventory(_itemList[itemIndex].name);
+        SaveInventory(_itemList[_currentItem].itemName);
     }
 
 

@@ -18,5 +18,5 @@ public static class StaticManager
     public static int currentHat;
 
     //Item store
-    public static bool hat1;
+    public static int hat1;
 }
