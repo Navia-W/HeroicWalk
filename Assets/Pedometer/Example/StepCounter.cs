@@ -23,7 +23,8 @@ namespace PedometerU.Tests {
         private void OnStep (int steps, double distance) {
             // Display the values // Distance in feet
             stepText.text = steps.ToString();
-            distanceText.text = (distance * 3.28084).ToString("F2") + " ft";
+            string calcDistance = (distance * 3.28084).ToString("F2");
+            distanceText.text = calcDistance;
         }
 
         private void OnDisable () {
