@@ -8,15 +8,19 @@ using UnityEngine;
 /// </summary>
 public static class StaticManager
 {
-    //Example value
-    public static int exampleInt;
-    public static int exampleInt2;
-    public static int exampleInt3;
-
     //Current active item
     public static int currentShirt;
     public static int currentHat;
 
     //Item store
     public static int hat1;
+
+    //Pickups
+    public static int pickUpCount;
+
+    //Distance
+    public static float distanceTravelled;
+
+    //MiniGame
+    public static int score;
 }

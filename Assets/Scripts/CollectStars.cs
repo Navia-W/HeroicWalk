@@ -51,4 +51,14 @@ public class CollectStars : MonoBehaviour
         counter.text = starAmount.ToString();
     }
 
+    private void OnApplicationQuit()
+    {
+        SaveStarCount();
+    }
+
+    public void SaveStarCount()
+    {
+        StaticManager.pickUpCount = starAmount;
+        SaveData.saveData.GetVariables();
+    }
 }
