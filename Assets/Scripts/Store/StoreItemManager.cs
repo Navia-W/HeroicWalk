@@ -7,7 +7,7 @@ public class StoreItemManager : MonoBehaviour
     public static StoreItemManager storeItemManager;
     public static List<StoreItemAttributes> itemList = new List<StoreItemAttributes>();
 
-    private void Awake()
+    private void Start()
     {
         LoadData.loadData.GetVariables();
 
