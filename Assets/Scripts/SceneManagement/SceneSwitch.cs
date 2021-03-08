@@ -3,7 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
+    public static SceneSwitch sceneSwitch;
+
     private int _currentScene = 0;
+
+    private void Awake()
+    {
+        if (sceneSwitch == null)
+            sceneSwitch = this;
+    }
 
     /// <summary>
     ///Call to load scene based on index in the build settings. Will delete previous scene.

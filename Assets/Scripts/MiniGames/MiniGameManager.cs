@@ -27,6 +27,15 @@ public class MiniGameManager : MonoBehaviour
     public void OnComplete()
     {
         //Save score
+        SaveScore();
+
         //Load Main scene
+        SceneSwitch.sceneSwitch.GoToScene(0);
+    }
+
+    public void SaveScore()
+    {
+        StaticManager.score = _scores[0];
+        SaveData.saveData.GetVariables();
     }
 }

@@ -60,4 +60,15 @@ public class DistanceTracker : MonoBehaviour
     {
         TargetDistance += 50;
     }
+
+    private void OnApplicationQuit()
+    {
+        SaveDistance();
+    }
+
+    public void SaveDistance()
+    {
+        StaticManager.distanceTravelled = currentDistance;
+        SaveData.saveData.GetVariables();
+    }
 }
